@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tristan & Ankia | Our Wedding</title>
+
+    <style>
+        :root {
+            --burgundy: #824C53;
+            --blue: #99BED4;
+            --blush: #FFDFE1;
+            --beige: #EDE1DE;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background-color: var(--beige);
+            color: var(--burgundy);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                linear-gradient(
+                    rgba(237, 225, 222, 0.82),
+                    rgba(237, 225, 222, 0.82)
+                );
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .small-heading {
+            font-size: 16px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            font-weight: normal;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .ampersand {
+            color: var(--blue);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: var(--burgundy);
+            font-style: italic;
+            margin-bottom: 45px;
+        }
+
+        .message {
+            max-width: 550px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #604347;
+        }
+
+        .upload-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: var(--burgundy);
+            color: var(--white);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .upload-button:hover {
+            background-color: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-text {
+            margin-top: 35px;
+            font-size: 14px;
+            color: #76565b;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 60px;
+            }
+
+            .subtitle {
+                font-size: 19px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-heading">
+                Welcome to our wedding
+            </div>
+
+            <h1>
+                Tristan
+                <span class="ampersand">&</span>
+                Ankia
+            </h1>
+
+            <div class="subtitle">
+                Our Wedding Day
+            </div>
+
+            <p class="message">
+                You were there. You saw moments we might have missed.
+                Help us capture the laughter, love and little moments
+                that made our day so special.
+            </p>
+
+            <a href="#" class="upload-button">
+                📸 Share Your Photos
+            </a>
+
+            <div class="footer-text">
+                No app. No account. Just memories. 🤍
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
