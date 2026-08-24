@@ -7,18 +7,33 @@
     <title>Tristan & Ankia | Our Wedding</title>
 
     <style>
+
+        /* =========================
+           WEDDING COLOURS
+        ========================= */
+
         :root {
             --burgundy: #824C53;
             --blue: #99BED4;
             --blush: #FFDFE1;
             --beige: #EDE1DE;
-            --white: #ffffff;
+            --white: #FFFFFF;
+            --dark-text: #604347;
         }
+
+
+        /* =========================
+           GENERAL
+        ========================= */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -27,137 +42,914 @@
             color: var(--burgundy);
         }
 
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
         .hero {
             min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
-            padding: 40px 20px;
+
+            padding: 70px 25px;
+
             background:
                 linear-gradient(
-                    rgba(237, 225, 222, 0.82),
-                    rgba(237, 225, 222, 0.82)
+                    135deg,
+                    var(--beige) 0%,
+                    var(--blush) 100%
                 );
         }
 
+
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
         }
 
-        .small-heading {
-            font-size: 16px;
+
+        /* =========================
+           DECORATIVE FLOWERS
+        ========================= */
+
+        .flower {
+            position: absolute;
+            color: var(--burgundy);
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        .flower.one {
+            top: 35px;
+            left: 35px;
+            font-size: 55px;
+            transform: rotate(-20deg);
+        }
+
+        .flower.two {
+            top: 55px;
+            right: 40px;
+            font-size: 45px;
+            color: var(--blue);
+            transform: rotate(20deg);
+        }
+
+        .flower.three {
+            bottom: 45px;
+            left: 60px;
+            font-size: 45px;
+            color: var(--blue);
+            transform: rotate(15deg);
+        }
+
+        .flower.four {
+            bottom: 35px;
+            right: 50px;
+            font-size: 55px;
+            transform: rotate(-15deg);
+        }
+
+
+        /* =========================
+           HERO TEXT
+        ========================= */
+
+        .welcome {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
             letter-spacing: 5px;
             text-transform: uppercase;
+
             margin-bottom: 25px;
         }
 
+
         h1 {
-            font-size: clamp(55px, 10vw, 110px);
+            font-size: clamp(52px, 9vw, 105px);
             font-weight: normal;
-            line-height: 1;
-            margin-bottom: 20px;
+            line-height: 1.05;
+            margin-bottom: 18px;
         }
+
 
         .ampersand {
             color: var(--blue);
             font-style: italic;
+            padding: 0 8px;
         }
 
-        .subtitle {
-            font-size: 22px;
-            color: var(--burgundy);
-            font-style: italic;
-            margin-bottom: 45px;
+
+        .wedding-day {
+            font-size: 20px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
-        .message {
-            max-width: 550px;
-            margin: 0 auto 40px;
+
+        .date {
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            letter-spacing: 4px;
+            color: var(--dark-text);
+        }
+
+
+        /* =========================
+           FLORAL DIVIDER
+        ========================= */
+
+        .floral-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 15px;
+
+            margin: 35px auto;
+        }
+
+
+        .floral-divider::before,
+        .floral-divider::after {
+            content: "";
+
+            width: 120px;
+            height: 1px;
+
+            background-color: var(--burgundy);
+            opacity: 0.4;
+        }
+
+
+        .floral-symbol {
+            color: var(--blue);
+            font-size: 23px;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            max-width: 620px;
+            margin: 0 auto;
+
             font-size: 18px;
             line-height: 1.8;
-            color: #604347;
+
+            color: var(--dark-text);
         }
 
-        .upload-button {
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
             display: inline-block;
-            padding: 18px 45px;
+
+            margin-top: 35px;
+
+            padding: 18px 42px;
+
             background-color: var(--burgundy);
             color: var(--white);
+
             text-decoration: none;
+
             font-family: Arial, sans-serif;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            border-radius: 3px;
+
             transition: all 0.3s ease;
         }
 
-        .upload-button:hover {
+
+        .button:hover {
             background-color: var(--blue);
             transform: translateY(-3px);
         }
 
-        .footer-text {
-            margin-top: 35px;
+
+        /* =========================
+           I SPY SECTION
+        ========================= */
+
+        .challenge {
+            background-color: var(--white);
+
+            padding: 100px 25px;
+
+            text-align: center;
+        }
+
+
+        .challenge-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+
+        .camera {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+
+        .section-label {
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: var(--blue);
+
+            margin-bottom: 15px;
+        }
+
+
+        h2 {
+            font-size: clamp(42px, 7vw, 70px);
+
+            font-weight: normal;
+
+            margin-bottom: 25px;
+        }
+
+
+        .challenge-text {
+            max-width: 680px;
+
+            margin: auto;
+
+            font-size: 18px;
+            line-height: 1.8;
+
+            color: var(--dark-text);
+        }
+
+
+        .challenge-note {
+            max-width: 600px;
+
+            margin: 30px auto 0;
+
+            padding: 18px 25px;
+
+            background-color: var(--blush);
+
+            font-family: Arial, sans-serif;
+
             font-size: 14px;
-            color: #76565b;
+            line-height: 1.7;
+
+            color: var(--dark-text);
+        }
+
+
+        /* =========================
+           HOW TO PLAY
+        ========================= */
+
+        .how-it-works {
+            background-color: var(--blush);
+
+            padding: 90px 25px;
+
+            text-align: center;
+        }
+
+
+        .steps {
+            max-width: 950px;
+
+            margin: 50px auto 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+        }
+
+
+        .step {
+            flex: 1;
+
+            max-width: 270px;
+
+            padding: 30px 20px;
+        }
+
+
+        .step-number {
+            width: 58px;
+            height: 58px;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            background-color: var(--burgundy);
+
+            color: var(--white);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+
+        .step h3 {
+            font-size: 22px;
+
+            font-weight: normal;
+
+            margin-bottom: 12px;
+        }
+
+
+        .step p {
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color: var(--dark-text);
+        }
+
+
+        /* =========================
+           TABLE COMPETITION
+        ========================= */
+
+        .competition {
+            background-color: var(--beige);
+
+            padding: 90px 25px;
+
+            text-align: center;
+        }
+
+
+        .competition-box {
+            max-width: 700px;
+
+            margin: 35px auto 0;
+
+            padding: 40px 30px;
+
+            border: 1px solid rgba(130, 76, 83, 0.25);
+
+            background-color: rgba(255, 255, 255, 0.45);
+        }
+
+
+        .competition-title {
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .competition-text {
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: var(--dark-text);
+        }
+
+
+        .trophy {
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           QUOTE
+        ========================= */
+
+        .quote {
+            background-color: var(--white);
+
+            padding: 90px 25px;
+
+            text-align: center;
+        }
+
+
+        .quote-text {
+            max-width: 700px;
+
+            margin: auto;
+
+            font-size: 30px;
+
+            line-height: 1.5;
+
             font-style: italic;
         }
 
-        @media (max-width: 600px) {
+
+        .quote-names {
+            margin-top: 25px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: var(--burgundy);
+
+            color: var(--white);
+
+            text-align: center;
+
+            padding: 55px 25px;
+        }
+
+
+        footer h3 {
+            font-size: 32px;
+
+            font-weight: normal;
+
+            margin-bottom: 12px;
+        }
+
+
+        footer p {
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            opacity: 0.9;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .hero {
+                min-height: 100svh;
+
+                padding: 60px 20px;
+            }
+
+
             h1 {
-                font-size: 60px;
+                font-size: clamp(45px, 14vw, 70px);
             }
 
-            .subtitle {
-                font-size: 19px;
+
+            .wedding-day {
+                font-size: 17px;
+
+                letter-spacing: 3px;
             }
 
-            .message {
+
+            .date {
+                font-size: 13px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .intro {
                 font-size: 16px;
             }
+
+
+            .floral-divider::before,
+            .floral-divider::after {
+                width: 70px;
+            }
+
+
+            .steps {
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 10px;
+            }
+
+
+            .step {
+                max-width: 400px;
+            }
+
+
+            .flower.one {
+                left: 10px;
+                top: 20px;
+                font-size: 35px;
+            }
+
+
+            .flower.two {
+                right: 10px;
+                top: 25px;
+                font-size: 30px;
+            }
+
+
+            .flower.three {
+                left: 15px;
+                bottom: 20px;
+                font-size: 30px;
+            }
+
+
+            .flower.four {
+                right: 15px;
+                bottom: 20px;
+                font-size: 35px;
+            }
+
+
+            .quote-text {
+                font-size: 24px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <main class="hero">
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <!-- Temporary decorative flowers -->
+        <div class="flower one">✿</div>
+        <div class="flower two">❀</div>
+        <div class="flower three">❀</div>
+        <div class="flower four">✿</div>
+
 
         <div class="hero-content">
 
-            <div class="small-heading">
+            <div class="welcome">
                 Welcome to our wedding
             </div>
 
+
             <h1>
                 Tristan
-                <span class="ampersand">&</span>
+                <span class="ampersand">&amp;</span>
                 Ankia
             </h1>
 
-            <div class="subtitle">
+
+            <div class="wedding-day">
                 Our Wedding Day
             </div>
 
-            <p class="message">
-                You were there. You saw moments we might have missed.
-                Help us capture the laughter, love and little moments
-                that made our day so special.
+
+            <div class="date">
+                27 September 2026
+            </div>
+
+
+            <div class="floral-divider">
+
+                <span class="floral-symbol">
+                    ❀
+                </span>
+
+            </div>
+
+
+            <p class="intro">
+
+                We're so happy you're here to celebrate
+                this beautiful day with us.
+
+                Help us capture the laughter, love
+                and little moments that make our
+                wedding day unforgettable.
+
             </p>
 
-            <a href="#" class="upload-button">
-                📸 Share Your Photos
-            </a>
 
-            <div class="footer-text">
-                No app. No account. Just memories. 🤍
-            </div>
+            <a href="Upload.html" class="button">
+
+                📸 Share Your Photos
+
+            </a>
 
         </div>
 
-    </main>
+    </section>
+
+
+
+    <!-- =========================
+         I SPY
+    ========================= -->
+
+    <section class="challenge">
+
+        <div class="challenge-content">
+
+            <div class="camera">
+                📷
+            </div>
+
+
+            <div class="section-label">
+                The Wedding Photo Challenge
+            </div>
+
+
+            <h2>
+                I Spy...
+            </h2>
+
+
+            <p class="challenge-text">
+
+                Keep your eyes open throughout the
+                celebration!
+
+                Your table has been given a list of
+                special moments to capture.
+
+                Get creative, have fun and most
+                importantly, enjoy the day.
+
+            </p>
+
+
+            <div class="challenge-note">
+
+                <strong>
+                    📸 Take a photo for each challenge.
+                </strong>
+
+                <br>
+
+                Capture the moments naturally —
+                without interrupting the ceremony,
+                speeches, photographer's important
+                shots or the bride and groom's
+                special moments.
+
+            </div>
+
+
+            <a href="#how-it-works" class="button">
+
+                How To Play
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================= -->
+
+    <section class="how-it-works" id="how-it-works">
+
+        <div class="section-label">
+            Snap • Scan • Share
+        </div>
+
+
+        <h2>
+            How To Play
+        </h2>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+
+                <h3>
+                    Snap
+                </h3>
+
+
+                <p>
+
+                    Take photos that match the
+                    challenges on your table's
+                    I Spy card.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Scan
+                </h3>
+
+
+                <p>
+
+                    Scan the QR code on your
+                    table's I Spy card when
+                    you're ready to submit.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Share
+                </h3>
+
+
+                <p>
+
+                    Select your table and
+                    upload your challenge
+                    photos.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         COMPETITION
+    ========================= -->
+
+    <section class="competition">
+
+        <div class="section-label">
+            Let The Games Begin
+        </div>
+
+
+        <div class="trophy">
+            🏆
+        </div>
+
+
+        <h2>
+            Which Table Will Win?
+        </h2>
+
+
+        <div class="competition-box">
+
+            <div class="competition-title">
+
+                Capture the most.
+                Have the most fun.
+
+            </div>
+
+
+            <p class="competition-text">
+
+                Each table is competing to complete
+                their I Spy challenges.
+
+                So keep your camera ready, capture
+                those special moments and submit
+                your photos throughout the day.
+
+                <br><br>
+
+                <strong>
+                    May the best table win! ❤️
+                </strong>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         QUOTE
+    ========================= -->
+
+    <section class="quote">
+
+        <div class="quote-text">
+
+            "The best memories are the ones
+            we share."
+
+        </div>
+
+
+        <div class="quote-names">
+
+            Tristan &amp; Ankia
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>
+            Tristan &amp; Ankia
+        </h3>
+
+
+        <p>
+            27 September 2026
+        </p>
+
+
+        <p style="margin-top: 15px;">
+
+            Thank you for celebrating
+            with us. 🤍
+
+        </p>
+
+    </footer>
+
 
 </body>
 </html>
