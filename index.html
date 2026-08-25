@@ -2,119 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Tristan & Ankia | Wedding</title>
 
     <style>
+        :root {
+            --dusty-blue: #99BED4;
+            --burgundy: #824C53;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        html, body {
-            width: 100%;
-            min-height: 100%;
-        }
-
+        html,
         body {
-            background: #99BED4;
-            font-family: Georgia, "Times New Roman", serif;
-            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--dusty-blue);
         }
 
+        /*
+         * The complete generated artwork is displayed as one image.
+         * It is fitted to the HEIGHT of the visitor's screen so the
+         * entire invitation is visible — including the Upload button.
+         */
         .page {
             position: relative;
-            width: 100%;
+            width: 100vw;
+            height: 100svh;
             min-height: 100svh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
             overflow: hidden;
-            background: #99BED4;
+            background: var(--dusty-blue);
         }
 
-        /*
-         * The generated wedding artwork is the actual background artwork.
-         * Keep tristan-ankia-home-artwork.png in the same GitHub folder
-         * as this index.html file.
-         */
         .artwork {
+            position: absolute;
+            inset: 0;
+
+            width: auto;
+            height: 100%;
+
+            max-width: 100%;
+            max-height: 100%;
+
+            margin: auto;
+
             display: block;
-            width: 100%;
-            height: auto;
-            min-height: 100svh;
-            object-fit: cover;
-            object-position: center top;
+
+            object-fit: contain;
+            object-position: center center;
         }
 
         /*
-         * Transparent clickable area placed over the artwork.
-         * It deliberately has no visible styling so the artwork remains
-         * completely unchanged.
+         * Invisible clickable area over the actual burgundy
+         * "UPLOAD YOUR PHOTOS" button in the artwork.
+         *
+         * Coordinates are percentages of the 1024 x 1536 artwork.
          */
         .upload-link {
             position: absolute;
-            left: 50%;
-            bottom: 10.5%;
-            transform: translateX(-50%);
 
-            width: min(72%, 360px);
-            height: 68px;
+            left: 18.5%;
+            top: 75.7%;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 63%;
+            height: 7.0%;
 
-            border-radius: 8px;
+            display: block;
 
-            color: transparent;
-            text-decoration: none;
+            border-radius: 12px;
 
             background: transparent;
+
+            text-decoration: none;
+
             -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .upload-link:focus-visible {
-            outline: 3px solid #824C53;
+            outline: 3px solid var(--burgundy);
             outline-offset: 4px;
         }
 
         /*
-         * The artwork was designed vertically. On smaller phones we
-         * preserve the artwork rather than cropping its important details.
+         * Because the artwork is always kept at its original aspect ratio,
+         * the clickable button stays aligned with it on phones and desktops.
          */
-        @media (max-width: 600px) {
-            .artwork {
-                width: 100%;
-                min-height: auto;
-                object-fit: contain;
-            }
-
-            .page {
-                min-height: auto;
-            }
-
+        @media (max-aspect-ratio: 2 / 3) {
             .upload-link {
-                bottom: 9.5%;
-                width: 78%;
-                height: 62px;
-            }
-        }
-
-        @media (min-width: 601px) {
-            .page {
-                min-height: 100vh;
-            }
-
-            .artwork {
-                width: min(100%, 900px);
-                min-height: 100vh;
-                object-fit: contain;
-            }
-
-            .upload-link {
-                bottom: 8%;
+                left: 18.5%;
+                top: 75.7%;
+                width: 63%;
+                height: 7.0%;
             }
         }
     </style>
@@ -133,11 +117,8 @@
         <a
             class="upload-link"
             href="upload.html"
-            aria-label="Upload wedding photos"
-            title="Upload your photos"
-        >
-            Upload your photos
-        </a>
+            aria-label="Upload your wedding photos"
+        ></a>
 
     </main>
 
