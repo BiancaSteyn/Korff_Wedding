@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tristan & Ankia | Wedding Photos</title>
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Tristan & Ankia Wedding Photos</title>
+
 
 <style>
+
 :root {
-    --blue: #A9C9DC;
+    --blue: #A9C9DA;
+    --cream: #FFFDF8;
     --burgundy: #824C53;
-    --cream: #FBF7F1;
+    --soft-burgundy: #955D64;
 }
+
 
 * {
     box-sizing: border-box;
@@ -18,296 +29,738 @@
     padding: 0;
 }
 
+
 html,
 body {
     min-height: 100%;
 }
 
+
 body {
-    min-height: 100vh;
+
     background: var(--blue);
+
     color: var(--burgundy);
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     overflow-x: hidden;
 }
 
+
+/* =========================
+   PAGE
+========================= */
+
 .page {
+
     position: relative;
+
     min-height: 100svh;
+
     overflow: hidden;
-    isolation: isolate;
-    padding: 34px 18px 42px;
+
+    padding:
+        55px 18px 45px;
+
 }
+
+
+/* =========================
+   CORNER FLOWERS
+========================= */
 
 .floral {
-    position: fixed;
-    z-index: -1;
-    pointer-events: none;
-    user-select: none;
-    width: clamp(125px, 24vw, 300px);
+
+    position: absolute;
+
+    width:
+        clamp(180px, 27vw, 360px);
+
     height: auto;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    z-index: 0;
 }
+
 
 .top-left {
-    top: 0;
-    left: 0;
+
+    top: -10px;
+    left: -10px;
+
 }
+
 
 .top-right {
-    top: 0;
-    right: 0;
+
+    top: -10px;
+    right: -10px;
+
 }
+
 
 .bottom-left {
-    bottom: 0;
-    left: 0;
+
+    bottom: -10px;
+    left: -10px;
+
 }
+
 
 .bottom-right {
-    bottom: 0;
-    right: 0;
+
+    bottom: -10px;
+    right: -10px;
+
 }
+
+
+/* =========================
+   CONTENT
+========================= */
 
 .content {
-    width: min(100%, 620px);
-    margin: 0 auto;
-    text-align: center;
+
     position: relative;
+
     z-index: 2;
+
+    width:
+        min(100%, 650px);
+
+    margin:
+        0 auto;
+
+    text-align:
+        center;
+
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 .eyebrow {
-    font-size: clamp(11px, 2vw, 15px);
-    letter-spacing: .28em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+
+    font-size:
+        clamp(11px, 2vw, 16px);
+
+    letter-spacing:
+        .28em;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        14px;
+
 }
+
 
 h1 {
-    font-size: clamp(42px, 8vw, 76px);
-    line-height: .98;
-    font-weight: 400;
-    letter-spacing: -.025em;
+
+    font-size:
+        clamp(42px, 8vw, 82px);
+
+    line-height:
+        1;
+
+    font-weight:
+        400;
+
+    margin-bottom:
+        16px;
+
 }
+
 
 .date {
-    margin-top: 12px;
-    font-size: clamp(14px, 2.5vw, 20px);
-    letter-spacing: .30em;
-    text-transform: uppercase;
+
+    font-size:
+        clamp(14px, 2.5vw, 20px);
+
+    letter-spacing:
+        .30em;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        26px;
+
 }
 
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin: 22px auto 20px;
-    max-width: 440px;
-}
 
-.divider::before,
-.divider::after {
-    content: "";
-    height: 1px;
-    flex: 1;
-    background: var(--burgundy);
-    opacity: .75;
-}
-
-.divider img {
-    width: 58px;
-    height: 38px;
-    object-fit: contain;
-}
-
-.card {
-    background: rgba(251, 247, 241, .88);
-    border: 1px solid rgba(130, 76, 83, .12);
-    border-radius: 18px;
-    padding: 25px 20px 28px;
-    box-shadow: 0 12px 35px rgba(72, 32, 38, .12);
-    backdrop-filter: blur(2px);
-}
+/* =========================
+   CAMERA
+========================= */
 
 .camera-art {
-    display: block;
-    width: min(245px, 64vw);
-    height: auto;
-    margin: 0 auto 3px;
+
+    display:
+        block;
+
+    width:
+        min(270px, 62vw);
+
+    height:
+        auto;
+
+    margin:
+        0 auto 5px;
+
 }
+
+
+/* =========================
+   TITLE
+========================= */
 
 .title {
-    font-size: clamp(43px, 9vw, 66px);
-    line-height: .9;
-    font-style: italic;
-    font-weight: 400;
-    margin-bottom: 10px;
+
+    font-size:
+        clamp(62px, 12vw, 125px);
+
+    line-height:
+        .9;
+
+    font-style:
+        italic;
+
+    font-weight:
+        400;
+
+    margin-bottom:
+        10px;
+
 }
+
+
+.subtitle {
+
+    font-size:
+        clamp(13px, 2.5vw, 21px);
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        28px;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    width:
+        min(100%, 540px);
+
+    margin:
+        0 auto;
+
+    padding:
+        30px 28px 32px;
+
+    background:
+        var(--cream);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(72, 50, 50, .12);
+
+}
+
+
+/* =========================
+   INSTRUCTIONS
+========================= */
 
 .instructions {
-    font-size: clamp(16px, 2.8vw, 20px);
-    line-height: 1.45;
-    font-style: italic;
-    margin: 0 auto 24px;
-    max-width: 480px;
+
+    font-size:
+        clamp(16px, 2.7vw, 20px);
+
+    line-height:
+        1.5;
+
+    margin-bottom:
+        25px;
+
+    font-style:
+        italic;
+
 }
 
-.table-label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: left;
+
+/* =========================
+   TABLE SELECT
+========================= */
+
+.label {
+
+    display:
+        block;
+
+    text-align:
+        left;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        .12em;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        8px;
+
 }
 
-select {
-    width: 100%;
-    min-height: 54px;
-    padding: 13px 14px;
-    border: 1px solid rgba(130, 76, 83, .28);
-    border-radius: 10px;
-    background: var(--cream);
-    color: var(--burgundy);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+
+#tableSelect {
+
+    width:
+        100%;
+
+    min-height:
+        54px;
+
+    padding:
+        12px 15px;
+
+    border:
+        1px solid
+        rgba(130, 76, 83, .35);
+
+    border-radius:
+        8px;
+
+    background:
+        white;
+
+    color:
+        var(--burgundy);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        16px;
+
+    cursor:
+        pointer;
+
 }
 
-select:focus {
-    outline: 2px solid rgba(130, 76, 83, .25);
-    outline-offset: 2px;
+
+/* =========================
+   FILE UPLOAD
+========================= */
+
+.upload-label {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        100%;
+
+    min-height:
+        58px;
+
+    margin-top:
+        18px;
+
+    padding:
+        14px 18px;
+
+    border:
+        2px dashed
+        var(--burgundy);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    color:
+        var(--burgundy);
+
+    font-size:
+        15px;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
 }
 
-.upload-wrap {
-    margin-top: 18px;
+
+.upload-label:hover {
+
+    background:
+        white;
+
 }
 
-.photo-input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
+
+#photoInput {
+
+    display:
+        none;
+
 }
 
-.upload-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    width: 100%;
-    min-height: 62px;
-    padding: 14px 18px;
-    border-radius: 12px;
-    background: var(--burgundy);
-    color: var(--cream);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(15px, 2.8vw, 20px);
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(72, 32, 38, .18);
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+    margin-top:
+        18px;
+
 }
 
-.upload-button:active {
-    transform: translateY(1px);
+
+.preview-item {
+
+    position:
+        relative;
+
 }
 
-.camera-icon {
-    width: 31px;
-    height: 24px;
-    border: 2px solid var(--cream);
-    border-radius: 5px;
-    position: relative;
-    flex: 0 0 auto;
+
+.preview-item img {
+
+    width:
+        82px;
+
+    height:
+        82px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        7px;
+
+    border:
+        2px solid
+        var(--blue);
+
 }
 
-.camera-icon::before {
-    content: "";
-    position: absolute;
-    width: 11px;
-    height: 6px;
-    border: 2px solid var(--cream);
-    border-bottom: 0;
-    border-radius: 3px 3px 0 0;
-    top: -8px;
-    left: 7px;
+
+.remove-photo {
+
+    position:
+        absolute;
+
+    top:
+        -7px;
+
+    right:
+        -7px;
+
+    width:
+        23px;
+
+    height:
+        23px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--burgundy);
+
+    color:
+        white;
+
+    cursor:
+        pointer;
+
 }
 
-.camera-icon::after {
-    content: "";
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    border: 2px solid var(--cream);
-    border-radius: 50%;
-    left: 8px;
-    top: 5px;
+
+/* =========================
+   SUBMIT
+========================= */
+
+.submit-button {
+
+    width:
+        100%;
+
+    min-height:
+        60px;
+
+    margin-top:
+        22px;
+
+    border:
+        none;
+
+    border-radius:
+        9px;
+
+    background:
+        var(--burgundy);
+
+    color:
+        white;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        16px;
+
+    letter-spacing:
+        .14em;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 7px 18px
+        rgba(72, 32, 38, .16);
+
 }
+
+
+.submit-button:disabled {
+
+    opacity:
+        .55;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
 
 .status {
-    min-height: 24px;
-    margin-top: 15px;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1.4;
+
+    min-height:
+        24px;
+
+    margin-top:
+        16px;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.4;
+
 }
+
 
 .status.success {
-    color: #46694c;
+
+    color:
+        #46694c;
+
 }
+
 
 .status.error {
-    color: #8b3d45;
+
+    color:
+        #8b3d45;
+
 }
 
-.note {
-    margin-top: 12px;
-    font-size: 12px;
-    line-height: 1.45;
-    opacity: .85;
-}
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
-    margin-top: 20px;
-    font-size: clamp(11px, 2vw, 15px);
-    letter-spacing: .18em;
-    text-transform: uppercase;
+
+    margin-top:
+        22px;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
+
     .page {
-        padding: 28px 12px 32px;
+
+        padding:
+            35px 12px 30px;
+
     }
+
 
     .floral {
-        width: 125px;
+
+        width:
+            145px;
+
     }
+
+
+    .top-left,
+    .top-right {
+
+        top:
+            -5px;
+
+    }
+
+
+    .bottom-left,
+    .bottom-right {
+
+        bottom:
+            -5px;
+
+    }
+
 
     .card {
-        padding: 22px 15px 25px;
-        border-radius: 14px;
+
+        padding:
+            24px 17px 27px;
+
     }
+
 
     .camera-art {
-        width: min(220px, 62vw);
+
+        width:
+            min(220px, 58vw);
+
     }
 
-    .upload-button {
-        min-height: 60px;
+
+    .title {
+
+        font-size:
+            68px;
+
     }
+
 }
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .floral {
+
+        width:
+            120px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            39px;
+
+    }
+
+
+    .title {
+
+        font-size:
+            60px;
+
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <main class="page">
 
-    <!-- Corner flowers -->
+
+    <!-- TOP FLOWERS -->
+
     <img
         class="floral top-left"
         src="wedding_assets/flowers-top-left.png"
@@ -319,6 +772,9 @@ select:focus {
         src="wedding_assets/flowers-top-right.png"
         alt=""
     >
+
+
+    <!-- BOTTOM FLOWERS -->
 
     <img
         class="floral bottom-left"
@@ -332,45 +788,58 @@ select:focus {
         alt=""
     >
 
+
+
     <section class="content">
 
 
-        <h1>Tristan &amp; Ankia's Wedding</h1>
+        <h1>
+            Tristan &amp; Ankia's Wedding
+        </h1>
+
 
         <div class="date">
             27 September 2026
         </div>
 
-        <div class="divider">
-            <img
-                src="wedding_assets/flowers-camera.png"
-                alt=""
-            >
+
+        <img
+            class="camera-art"
+            src="wedding_assets/flowers-camera.png"
+            alt=""
+        >
+
+
+        <div class="title">
+            I Spy...
         </div>
 
-        <div class="card">
 
-            <img
-                class="camera-art"
-                src="wedding_assets/flowers-camera.png"
-                alt=""
-            >
+        <div class="subtitle">
+            Wedding Photos
+        </div>
 
-            <h2 class="title">
-                I Spy...
-            </h2>
+
+
+        <section class="card">
+
 
             <p class="instructions">
-                Snap a photo, choose your table,
-                and send it straight to the wedding collection. ❤️
+                Capture the moments,
+                choose your table,
+                and upload your photos. ❤️
             </p>
 
+
+            <!-- TABLE -->
+
             <label
-                class="table-label"
+                class="label"
                 for="tableSelect"
             >
                 Choose your table
             </label>
+
 
             <select id="tableSelect">
 
@@ -412,245 +881,511 @@ select:focus {
 
             </select>
 
-            <div class="upload-wrap">
 
-                <input
-                    id="photoInput"
-                    class="photo-input"
-                    type="file"
-                    accept="image/*"
-                >
 
-                <label
-                    class="upload-button"
-                    for="photoInput"
-                >
-                    <span
-                        class="camera-icon"
-                        aria-hidden="true"
-                    ></span>
+            <!-- PHOTOS -->
 
-                    <span>
-                        Add Photo
-                    </span>
-                </label>
+            <label
+                class="upload-label"
+                for="photoInput"
+            >
+                📷 &nbsp; Choose Photos
+            </label>
 
-            </div>
+
+            <input
+                id="photoInput"
+                type="file"
+                accept="image/*"
+                multiple
+            >
+
+
+            <div
+                id="preview"
+                class="preview"
+            ></div>
+
+
+
+            <!-- SEND -->
+
+            <button
+                id="submitButton"
+                class="submit-button"
+                type="button"
+            >
+                Upload Photos
+            </button>
+
 
             <div
                 id="status"
                 class="status"
-                aria-live="polite"
             ></div>
 
-            <p class="note">
-                No table selected? No problem —
-                your photo will be placed in the General folder.
-            </p>
 
-        </div>
+        </section>
+
 
         <div class="footer">
-            Snap &nbsp;•&nbsp; Share &nbsp;•&nbsp; Keep partying 🥂
+            Snap • Share • Celebrate ❤️
         </div>
+
 
     </section>
 
+
 </main>
+
+
 
 <script>
 
-const WEB_APP_URL =
+const SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbxWe7X76wDyx08ck8xCEJDJbMUAYn24tbXVLZzCKmxzvF2G6rpvaLA8HHEiNUB_QB5d/exec";
 
-const tableSelect =
-    document.getElementById("tableSelect");
 
 const photoInput =
     document.getElementById("photoInput");
 
-const statusBox =
+const preview =
+    document.getElementById("preview");
+
+const submitButton =
+    document.getElementById("submitButton");
+
+const status =
     document.getElementById("status");
 
-
-photoInput.addEventListener("change", async function () {
-
-    const file =
-        this.files && this.files[0];
-
-    if (!file) {
-        return;
-    }
-
-    statusBox.className = "status";
-    statusBox.textContent =
-        "Sending your photo... 📸";
-
-    try {
-
-        const dataUrl =
-            await resizeImage(file);
-
-        const body =
-            new URLSearchParams({
-
-                table:
-                    tableSelect.value || "",
-
-                filename:
-                    file.name || "wedding-photo.jpg",
-
-                mimeType:
-                    "image/jpeg",
-
-                data:
-                    dataUrl.split(",")[1]
-
-            });
+const tableSelect =
+    document.getElementById("tableSelect");
 
 
-        await fetch(
-            WEB_APP_URL,
-            {
-                method: "POST",
-                mode: "no-cors",
-                headers: {
-                    "Content-Type":
-                        "application/x-www-form-urlencoded;charset=UTF-8"
-                },
-                body: body
-            }
-        );
+let selectedFiles = [];
 
 
-        statusBox.className =
-            "status success";
 
-        statusBox.textContent =
-            "Photo sent! ❤️ Enjoy the party!";
+/* =========================
+   SELECT PHOTOS
+========================= */
 
+photoInput.addEventListener(
+    "change",
+    function () {
 
-        tableSelect.value = "";
-        photoInput.value = "";
+        const newFiles =
+            Array.from(photoInput.files);
 
-
-    } catch (error) {
-
-        console.error(error);
-
-        statusBox.className =
-            "status error";
-
-        statusBox.textContent =
-            "We couldn't send that photo. Please try again.";
+        selectedFiles =
+            selectedFiles.concat(newFiles);
 
         photoInput.value = "";
 
+        updatePreview();
+
     }
-
-});
-
-
-function resizeImage(file) {
-
-    return new Promise((resolve, reject) => {
-
-        const reader =
-            new FileReader();
+);
 
 
-        reader.onload = event => {
+
+/* =========================
+   PREVIEW
+========================= */
+
+function updatePreview() {
+
+    preview.innerHTML = "";
+
+
+    selectedFiles.forEach(
+        function (file, index) {
+
+            const item =
+                document.createElement("div");
+
+            item.className =
+                "preview-item";
+
 
             const img =
-                new Image();
+                document.createElement("img");
 
-
-            img.onload = () => {
-
-                const max = 1800;
-
-                let width =
-                    img.width;
-
-                let height =
-                    img.height;
-
-
-                if (
-                    width > max ||
-                    height > max
-                ) {
-
-                    const scale =
-                        Math.min(
-                            max / width,
-                            max / height
-                        );
-
-                    width =
-                        Math.round(
-                            width * scale
-                        );
-
-                    height =
-                        Math.round(
-                            height * scale
-                        );
-
-                }
-
-
-                const canvas =
-                    document.createElement("canvas");
-
-                canvas.width =
-                    width;
-
-                canvas.height =
-                    height;
-
-
-                const ctx =
-                    canvas.getContext("2d");
-
-                ctx.drawImage(
-                    img,
-                    0,
-                    0,
-                    width,
-                    height
-                );
-
-
-                resolve(
-                    canvas.toDataURL(
-                        "image/jpeg",
-                        0.80
-                    )
-                );
-
-            };
-
-
-            img.onerror =
-                reject;
 
             img.src =
-                event.target.result;
-
-        };
+                URL.createObjectURL(file);
 
 
-        reader.onerror =
-            reject;
+            const remove =
+                document.createElement("button");
 
-        reader.readAsDataURL(file);
 
-    });
+            remove.type =
+                "button";
+
+            remove.className =
+                "remove-photo";
+
+            remove.textContent =
+                "×";
+
+
+            remove.onclick =
+                function () {
+
+                    selectedFiles.splice(
+                        index,
+                        1
+                    );
+
+                    updatePreview();
+
+                };
+
+
+            item.appendChild(img);
+
+            item.appendChild(remove);
+
+            preview.appendChild(item);
+
+        }
+    );
 
 }
 
+
+
+/* =========================
+   COMPRESS IMAGE
+========================= */
+
+function compressImage(file) {
+
+    return new Promise(
+        function (resolve, reject) {
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function (event) {
+
+                    const img =
+                        new Image();
+
+
+                    img.onload =
+                        function () {
+
+                            const maxSize =
+                                1600;
+
+                            let width =
+                                img.width;
+
+                            let height =
+                                img.height;
+
+
+                            if (
+                                width >
+                                maxSize ||
+                                height >
+                                maxSize
+                            ) {
+
+                                if (
+                                    width >
+                                    height
+                                ) {
+
+                                    height =
+                                        height *
+                                        (maxSize /
+                                        width);
+
+                                    width =
+                                        maxSize;
+
+                                }
+                                else {
+
+                                    width =
+                                        width *
+                                        (maxSize /
+                                        height);
+
+                                    height =
+                                        maxSize;
+
+                                }
+
+                            }
+
+
+                            const canvas =
+                                document.createElement(
+                                    "canvas"
+                                );
+
+
+                            canvas.width =
+                                width;
+
+                            canvas.height =
+                                height;
+
+
+                            const ctx =
+                                canvas.getContext(
+                                    "2d"
+                                );
+
+
+                            ctx.drawImage(
+                                img,
+                                0,
+                                0,
+                                width,
+                                height
+                            );
+
+
+                            canvas.toBlob(
+                                function (blob) {
+
+                                    const reader2 =
+                                        new FileReader();
+
+
+                                    reader2.onload =
+                                        function () {
+
+                                            resolve({
+                                                name:
+                                                    file.name,
+
+                                                type:
+                                                    "image/jpeg",
+
+                                                data:
+                                                    reader2
+                                                    .result
+                                                    .split(",")[1]
+                                            });
+
+                                        };
+
+
+                                    reader2.onerror =
+                                        reject;
+
+
+                                    reader2.readAsDataURL(
+                                        blob
+                                    );
+
+                                },
+
+                                "image/jpeg",
+
+                                0.82
+
+                            );
+
+                        };
+
+
+                    img.onerror =
+                        reject;
+
+
+                    img.src =
+                        event.target.result;
+
+                };
+
+
+            reader.onerror =
+                reject;
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+
+
+/* =========================
+   UPLOAD
+========================= */
+
+submitButton.addEventListener(
+    "click",
+    async function () {
+
+
+        if (
+            selectedFiles.length === 0
+        ) {
+
+            status.className =
+                "status error";
+
+            status.textContent =
+                "Please choose at least one photo.";
+
+            return;
+
+        }
+
+
+        submitButton.disabled =
+            true;
+
+
+        status.className =
+            "status";
+
+        status.textContent =
+            "Preparing your photos...";
+
+
+        try {
+
+
+            /*
+             * IMPORTANT:
+             *
+             * Blank table = General folder.
+             */
+
+            const table =
+                tableSelect.value ||
+                "general";
+
+
+            const files = [];
+
+
+            for (
+                let i = 0;
+                i < selectedFiles.length;
+                i++
+            ) {
+
+                status.textContent =
+                    "Preparing photo " +
+                    (i + 1) +
+                    " of " +
+                    selectedFiles.length +
+                    "...";
+
+
+                const compressed =
+                    await compressImage(
+                        selectedFiles[i]
+                    );
+
+
+                files.push(
+                    compressed
+                );
+
+            }
+
+
+            status.textContent =
+                "Uploading your photos...";
+
+
+            /*
+             * Send to Apps Script.
+             *
+             * no-cors is intentional.
+             * Google Apps Script does not provide
+             * normal CORS headers for this request.
+             */
+
+            await fetch(
+                SCRIPT_URL,
+                {
+                    method:
+                        "POST",
+
+                    mode:
+                        "no-cors",
+
+                    headers: {
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body:
+                        JSON.stringify({
+                            table:
+                                table,
+
+                            files:
+                                files
+                        })
+                }
+            );
+
+
+            /*
+             * With no-cors we cannot read
+             * Google's response.
+             *
+             * If the request reached Apps Script,
+             * the files will be created in Drive.
+             */
+
+            status.className =
+                "status success";
+
+            status.textContent =
+                "Your photos have been uploaded! ❤️";
+
+
+            selectedFiles = [];
+
+            updatePreview();
+
+
+            submitButton.disabled =
+                false;
+
+
+        }
+        catch (error) {
+
+            console.error(error);
+
+
+            status.className =
+                "status error";
+
+            status.textContent =
+                "Something went wrong. Please try again.";
+
+
+            submitButton.disabled =
+                false;
+
+        }
+
+    }
+);
+
 </script>
 
+
 </body>
+
 </html>
