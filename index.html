@@ -3,352 +3,657 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tristan & Ankia | Wedding</title>
+<title>Tristan & Ankia | Wedding Photos</title>
 
 <style>
-    :root {
-        --blue: #99BED4;
-        --burgundy: #824C53;
-        --pink: #FFDFE1;
-        --cream: #EDE1DE;
-    }
+:root {
+    --blue: #A9C9DC;
+    --burgundy: #824C53;
+    --cream: #FBF7F1;
+}
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    html, body {
-        min-height: 100%;
-    }
+html,
+body {
+    min-height: 100%;
+}
 
-    body {
-        background: var(--blue);
-        color: var(--burgundy);
-        font-family: Georgia, "Times New Roman", serif;
-        overflow-x: hidden;
-    }
+body {
+    min-height: 100vh;
+    background: var(--blue);
+    color: var(--burgundy);
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
 
+.page {
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 34px 18px 42px;
+}
+
+.floral {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+    width: clamp(125px, 24vw, 300px);
+    height: auto;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.content {
+    width: min(100%, 620px);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    font-size: clamp(11px, 2vw, 15px);
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: .98;
+    font-weight: 400;
+    letter-spacing: -.025em;
+}
+
+.date {
+    margin-top: 12px;
+    font-size: clamp(14px, 2.5vw, 20px);
+    letter-spacing: .30em;
+    text-transform: uppercase;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 22px auto 20px;
+    max-width: 440px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--burgundy);
+    opacity: .75;
+}
+
+.divider img {
+    width: 58px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.card {
+    background: rgba(251, 247, 241, .88);
+    border: 1px solid rgba(130, 76, 83, .12);
+    border-radius: 18px;
+    padding: 25px 20px 28px;
+    box-shadow: 0 12px 35px rgba(72, 32, 38, .12);
+    backdrop-filter: blur(2px);
+}
+
+.camera-art {
+    display: block;
+    width: min(245px, 64vw);
+    height: auto;
+    margin: 0 auto 3px;
+}
+
+.title {
+    font-size: clamp(43px, 9vw, 66px);
+    line-height: .9;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.instructions {
+    font-size: clamp(16px, 2.8vw, 20px);
+    line-height: 1.45;
+    font-style: italic;
+    margin: 0 auto 24px;
+    max-width: 480px;
+}
+
+.table-label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+select {
+    width: 100%;
+    min-height: 54px;
+    padding: 13px 14px;
+    border: 1px solid rgba(130, 76, 83, .28);
+    border-radius: 10px;
+    background: var(--cream);
+    color: var(--burgundy);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+select:focus {
+    outline: 2px solid rgba(130, 76, 83, .25);
+    outline-offset: 2px;
+}
+
+.upload-wrap {
+    margin-top: 18px;
+}
+
+.photo-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.upload-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 62px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: var(--burgundy);
+    color: var(--cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(15px, 2.8vw, 20px);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(72, 32, 38, .18);
+}
+
+.upload-button:active {
+    transform: translateY(1px);
+}
+
+.camera-icon {
+    width: 31px;
+    height: 24px;
+    border: 2px solid var(--cream);
+    border-radius: 5px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.camera-icon::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 6px;
+    border: 2px solid var(--cream);
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    top: -8px;
+    left: 7px;
+}
+
+.camera-icon::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border: 2px solid var(--cream);
+    border-radius: 50%;
+    left: 8px;
+    top: 5px;
+}
+
+.status {
+    min-height: 24px;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.status.success {
+    color: #46694c;
+}
+
+.status.error {
+    color: #8b3d45;
+}
+
+.note {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.45;
+    opacity: .85;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: clamp(11px, 2vw, 15px);
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
     .page {
-        position: relative;
-        min-height: 100svh;
-        overflow: hidden;
-        isolation: isolate;
-        padding: clamp(34px, 6vw, 80px) 18px 34px;
+        padding: 28px 12px 32px;
     }
 
-    /* Decorative flowers are actual image elements, not the page itself. */
     .floral {
-        position: absolute;
-        z-index: -1;
-        pointer-events: none;
-        user-select: none;
-        width: clamp(190px, 30vw, 390px);
-        height: auto;
+        width: 125px;
     }
 
-    .top-left {
-        top: -12px;
-        left: -20px;
-    }
-
-    .top-right {
-        top: -12px;
-        right: -20px;
-    }
-
-    .bottom-left {
-        bottom: -20px;
-        left: -20px;
-    }
-
-    .bottom-right {
-        bottom: -20px;
-        right: -20px;
-    }
-
-    .content {
-        width: min(100%, 760px);
-        margin: 0 auto;
-        text-align: center;
-        position: relative;
-        z-index: 2;
-    }
-
-    .eyebrow {
-        font-size: clamp(11px, 2vw, 16px);
-        letter-spacing: .28em;
-        text-transform: uppercase;
-        margin-bottom: 14px;
-    }
-
-    h1 {
-        font-size: clamp(45px, 8.5vw, 94px);
-        line-height: .98;
-        font-weight: 400;
-        letter-spacing: -.025em;
-        margin-bottom: 18px;
-    }
-
-    .date {
-        font-size: clamp(15px, 2.5vw, 22px);
-        letter-spacing: .34em;
-        text-transform: uppercase;
-        margin-bottom: 25px;
-    }
-
-    .divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        margin: 0 auto 28px;
-        max-width: 540px;
-    }
-
-    .divider::before,
-    .divider::after {
-        content: "";
-        height: 1px;
-        flex: 1;
-        background: var(--burgundy);
-        opacity: .8;
-    }
-
-    .divider-flower {
-        width: 62px;
-        height: 44px;
-        object-fit: contain;
+    .card {
+        padding: 22px 15px 25px;
+        border-radius: 14px;
     }
 
     .camera-art {
-   
-    width: min(340px, 55vw);
-    height: 125px;
-    object-fit: cover;
-    object-position: center;
-    margin: 0 auto -14px;
-    mix-blend-mode: multiply;
-    opacity: .98;
-}
-
-    .title-script {
-        font-size: clamp(72px, 13vw, 142px);
-        line-height: .9;
-        font-style: italic;
-        font-weight: 400;
-        margin-bottom: 14px;
-    }
-
-    .subtitle {
-        font-size: clamp(13px, 2.5vw, 23px);
-        letter-spacing: .20em;
-        text-transform: uppercase;
-        margin-bottom: 24px;
-    }
-
-    .message {
-        max-width: 620px;
-        margin: 0 auto 30px;
-        font-size: clamp(17px, 3vw, 27px);
-        line-height: 1.42;
-        font-style: italic;
+        width: min(220px, 62vw);
     }
 
     .upload-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 18px;
-        width: min(100%, 590px);
-        min-height: 68px;
-        margin: 0 auto;
-        padding: 16px 26px;
-        border-radius: 14px;
-        background: var(--burgundy);
-        color: white;
-        text-decoration: none;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(15px, 2.4vw, 22px);
-        letter-spacing: .16em;
-        text-transform: uppercase;
-        box-shadow: 0 7px 18px rgba(72, 32, 38, .18);
-        transition: transform .15s ease, box-shadow .15s ease;
+        min-height: 60px;
     }
-
-    .upload-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 22px rgba(72, 32, 38, .24);
-    }
-
-    .camera-icon {
-        width: 31px;
-        height: 24px;
-        border: 2px solid white;
-        border-radius: 5px;
-        position: relative;
-        flex: 0 0 auto;
-    }
-
-    .camera-icon::before {
-        content: "";
-        position: absolute;
-        width: 11px;
-        height: 6px;
-        border: 2px solid white;
-        border-bottom: 0;
-        border-radius: 3px 3px 0 0;
-        top: -8px;
-        left: 7px;
-    }
-
-    .camera-icon::after {
-        content: "";
-        position: absolute;
-        width: 9px;
-        height: 9px;
-        border: 2px solid white;
-        border-radius: 50%;
-        left: 8px;
-        top: 5px;
-    }
-
-    .footer-line {
-        margin-top: 24px;
-        font-size: clamp(12px, 2vw, 17px);
-        letter-spacing: .20em;
-        text-transform: uppercase;
-    }
-
-    @media (max-width: 600px) {
-        .page {
-            padding: 34px 16px 28px;
-        }
-
-        .floral {
-            width: 185px;
-        }
-
-        .top-left,
-        .top-right {
-            top: -5px;
-        }
-
-        .bottom-left,
-        .bottom-right {
-            bottom: -8px;
-        }
-
-        .camera-art {
-    width: 62vw;
-    height: 95px;
-    margin-bottom: -4px;
 }
-
-        .message {
-            max-width: 340px;
-            margin-bottom: 24px;
-        }
-
-        .upload-button {
-            min-height: 60px;
-            padding: 13px 14px;
-            gap: 12px;
-            letter-spacing: .11em;
-        }
-    }
-
-    @media (max-height: 720px) and (max-width: 600px) {
-        .page {
-            padding-top: 24px;
-        }
-
-        .eyebrow {
-            margin-bottom: 7px;
-        }
-
-        h1 {
-            margin-bottom: 10px;
-        }
-
-        .date {
-            margin-bottom: 14px;
-        }
-
-        .divider {
-            margin-bottom: 12px;
-        }
-
-        .camera-art {
-            height: 90px;
-        }
-
-        .title-script {
-            font-size: 66px;
-        }
-
-        .subtitle {
-            margin-bottom: 12px;
-        }
-
-        .message {
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-
-        .footer-line {
-            margin-top: 12px;
-        }
-    }
 </style>
 </head>
 
 <body>
+
 <main class="page">
 
-    <img class="floral top-left" src="wedding_assets/flowers-top-left.png" alt="">
-    <img class="floral top-right" src="wedding_assets/flowers-top-right.png" alt="">
-    <img class="floral bottom-left" src="wedding_assets/flowers-bottom-left.png" alt="">
-    <img class="floral bottom-right" src="wedding_assets/flowers-bottom-right.png" alt="">
+    <!-- Corner flowers -->
+    <img
+        class="floral top-left"
+        src="wedding_assets/flowers-top-left.png"
+        alt=""
+    >
+
+    <img
+        class="floral top-right"
+        src="wedding_assets/flowers-top-right.png"
+        alt=""
+    >
+
+    <img
+        class="floral bottom-left"
+        src="wedding_assets/flowers-bottom-left.png"
+        alt=""
+    >
+
+    <img
+        class="floral bottom-right"
+        src="wedding_assets/flowers-bottom-right.png"
+        alt=""
+    >
 
     <section class="content">
 
-        <div class="eyebrow">Welcome to our wedding</div>
-
-        <h1>Tristan &amp; Ankia</h1>
-
-        <div class="date">27 September 2026</div>
-
-        <div class="divider">
-            <img class="divider-flower" src="wedding_assets/flowers-camera.png" alt="">
+        <div class="eyebrow">
+            Tristan &amp; Ankia's Wedding
         </div>
 
-        <img
-            class="camera-art"
-            src="wedding_assets/flowers-camera.png"
-            alt=""
-        >
+        <h1>Share a Photo</h1>
 
-        <div class="title-script">I Spy...</div>
+        <div class="date">
+            27 September 2026
+        </div>
 
-        <div class="subtitle">The Wedding Photo Challenge</div>
+        <div class="divider">
+            <img
+                src="wedding_assets/flowers-camera.png"
+                alt=""
+            >
+        </div>
 
-        <p class="message">
-            Capture the special moments,<br>
-            complete your table’s challenges<br>
-            and help create memories<br>
-            Tristan &amp; Ankia will treasure forever.
-        </p>
+        <div class="card">
 
-        <a class="upload-button" href="upload.html">
-            <span class="camera-icon" aria-hidden="true"></span>
-            <span>Upload Your Photos</span>
-        </a>
+            <img
+                class="camera-art"
+                src="wedding_assets/flowers-camera.png"
+                alt=""
+            >
 
-        <div class="footer-line">Snap &nbsp;•&nbsp; Scan &nbsp;•&nbsp; Share &nbsp;•&nbsp; Win 🏆</div>
+            <h2 class="title">
+                I Spy...
+            </h2>
+
+            <p class="instructions">
+                Snap a photo, choose your table,
+                and send it straight to the wedding collection. ❤️
+            </p>
+
+            <label
+                class="table-label"
+                for="tableSelect"
+            >
+                Choose your table
+            </label>
+
+            <select id="tableSelect">
+
+                <option value="">
+                    Choose your table
+                </option>
+
+                <option value="1">
+                    Table 1
+                </option>
+
+                <option value="2">
+                    Table 2
+                </option>
+
+                <option value="3">
+                    Table 3
+                </option>
+
+                <option value="4">
+                    Table 4
+                </option>
+
+                <option value="5">
+                    Table 5
+                </option>
+
+                <option value="6">
+                    Table 6
+                </option>
+
+                <option value="7">
+                    Table 7
+                </option>
+
+                <option value="8">
+                    Table 8
+                </option>
+
+            </select>
+
+            <div class="upload-wrap">
+
+                <input
+                    id="photoInput"
+                    class="photo-input"
+                    type="file"
+                    accept="image/*"
+                >
+
+                <label
+                    class="upload-button"
+                    for="photoInput"
+                >
+                    <span
+                        class="camera-icon"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span>
+                        Add Photo
+                    </span>
+                </label>
+
+            </div>
+
+            <div
+                id="status"
+                class="status"
+                aria-live="polite"
+            ></div>
+
+            <p class="note">
+                No table selected? No problem —
+                your photo will be placed in the General folder.
+            </p>
+
+        </div>
+
+        <div class="footer">
+            Snap &nbsp;•&nbsp; Share &nbsp;•&nbsp; Keep partying 🥂
+        </div>
 
     </section>
+
 </main>
+
+<script>
+
+const WEB_APP_URL =
+    "https://script.google.com/macros/s/AKfycbxWe7X76wDyx08ck8xCEJDJbMUAYn24tbXVLZzCKmxzvF2G6rpvaLA8HHEiNUB_QB5d/exec";
+
+const tableSelect =
+    document.getElementById("tableSelect");
+
+const photoInput =
+    document.getElementById("photoInput");
+
+const statusBox =
+    document.getElementById("status");
+
+
+photoInput.addEventListener("change", async function () {
+
+    const file =
+        this.files && this.files[0];
+
+    if (!file) {
+        return;
+    }
+
+    statusBox.className = "status";
+    statusBox.textContent =
+        "Sending your photo... 📸";
+
+    try {
+
+        const dataUrl =
+            await resizeImage(file);
+
+        const body =
+            new URLSearchParams({
+
+                table:
+                    tableSelect.value || "",
+
+                filename:
+                    file.name || "wedding-photo.jpg",
+
+                mimeType:
+                    "image/jpeg",
+
+                data:
+                    dataUrl.split(",")[1]
+
+            });
+
+
+        await fetch(
+            WEB_APP_URL,
+            {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type":
+                        "application/x-www-form-urlencoded;charset=UTF-8"
+                },
+                body: body
+            }
+        );
+
+
+        statusBox.className =
+            "status success";
+
+        statusBox.textContent =
+            "Photo sent! ❤️ Enjoy the party!";
+
+
+        tableSelect.value = "";
+        photoInput.value = "";
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        statusBox.className =
+            "status error";
+
+        statusBox.textContent =
+            "We couldn't send that photo. Please try again.";
+
+        photoInput.value = "";
+
+    }
+
+});
+
+
+function resizeImage(file) {
+
+    return new Promise((resolve, reject) => {
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload = event => {
+
+            const img =
+                new Image();
+
+
+            img.onload = () => {
+
+                const max = 1800;
+
+                let width =
+                    img.width;
+
+                let height =
+                    img.height;
+
+
+                if (
+                    width > max ||
+                    height > max
+                ) {
+
+                    const scale =
+                        Math.min(
+                            max / width,
+                            max / height
+                        );
+
+                    width =
+                        Math.round(
+                            width * scale
+                        );
+
+                    height =
+                        Math.round(
+                            height * scale
+                        );
+
+                }
+
+
+                const canvas =
+                    document.createElement("canvas");
+
+                canvas.width =
+                    width;
+
+                canvas.height =
+                    height;
+
+
+                const ctx =
+                    canvas.getContext("2d");
+
+                ctx.drawImage(
+                    img,
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+
+                resolve(
+                    canvas.toDataURL(
+                        "image/jpeg",
+                        0.80
+                    )
+                );
+
+            };
+
+
+            img.onerror =
+                reject;
+
+            img.src =
+                event.target.result;
+
+        };
+
+
+        reader.onerror =
+            reject;
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+</script>
+
 </body>
 </html>
